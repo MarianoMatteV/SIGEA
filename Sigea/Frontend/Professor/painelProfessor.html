@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Painel do Professor</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./painelProfessor.css">
+</head>
+<body>
+  <header>
+    <h1>Painel do Professor</h1>
+    <p>Bem-vindo, professor</p>
+  </header>
+
+  <nav>
+    <a href="#minhasTurmas">Minhas Turmas</a>
+    <a href="#chamada">Chamada</a>
+    <a href="#notas">Notas</a>
+  </nav>
+
+  <main>
+    <!-- Minhas turmas -->
+    <section id="minhasTurmas" class="turmas">
+      <h2>Turmas em que estou alocado</h2>
+      <table>
+        <tr>
+          <th>Turma</th>
+          <th>Ação</th>
+        </tr>
+        <tr>
+          <td>1B-M</td>
+          <td><button class="editar" onclick="mostrarAlunos('1B-M')">Visualizar alunos</button></td>
+        </tr>
+        <tr>
+          <td>2A-T</td>
+          <td><button class="editar" onclick="mostrarAlunos('2A-T')">Visualizar alunos</button></td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Lista de alunos -->
+    <section id="alunosTurma" class="alunos" style="display:none;">
+      <h2>Alunos da turma <span id="turmaSelecionada"></span></h2>
+      <table>
+        <tr>
+          <th>Nome</th>
+          <th>Presença</th>
+          <th>Nota 1</th>
+          <th>Nota 2</th>
+          <th>Média Final</th>
+        </tr>
+        <!-- <tr>
+          <td>João Silva</td>
+          <td>
+            <select>
+              <option value="presente">Presente</option>
+              <option value="falta">Falta</option>
+            </select>
+          </td>
+          <td><input type="number" min="0" max="10" value="8"></td>
+          <td><input type="number" min="0" max="10" value="7"></td>
+          <td><input type="number" min="0" max="10" value="7.5"></td>
+        </tr>
+        <tr>
+          <td>Maria Oliveira</td>
+          <td>
+            <select>
+              <option value="presente">Presente</option>
+              <option value="falta">Falta</option>
+            </select>
+          </td>
+          <td><input type="number" min="0" max="10" value="9"></td>
+          <td><input type="number" min="0" max="10" value="8"></td>
+          <td><input type="number" min="0" max="10" value="8.5"></td>
+        </tr> -->
+
+        <tr class="aluno" data-id="1">
+          <td>João Silva</td>
+          <td>
+            <select>
+              <option value="presente">Presente</option>
+              <option value="falta">Falta</option>
+            </select>
+          </td>
+          <td><input type="number" min="0" max="10" value="8"></td>
+          <td><input type="number" min="0" max="10" value="7"></td>
+          <td><input type="number" min="0" max="10" value="7.5"></td>
+          <td><button onclick="abrirPopupAdicionarNota(1)">Adicionar Nota</button></td>
+        </tr>
+        <tr class="aluno" data-id="2">
+          <td>Maria Oliveira</td>
+          <td>
+            <select>
+              <option value="presente">Presente</option>
+              <option value="falta">Falta</option>
+            </select>
+          </td>
+          <td><input type="number" min="0" max="10" value="9"></td>
+          <td><input type="number" min="0" max="10" value="8"></td>
+          <td><input type="number" min="0" max="10" value="8.5"></td>
+          <td><button onclick="abrirPopupAdicionarNota(2)">Adicionar Nota</button></td>
+        </tr>
+
+      </table>
+    </section>
+  </main>
+
+  <script>
+    function mostrarAlunos(turma) {
+      document.getElementById("alunosTurma").style.display = "block";
+      document.getElementById("turmaSelecionada").textContent = turma;
+    }
+  </script>
+  <script src="./painelProfessor.js"></script>
+</body>
+</html>

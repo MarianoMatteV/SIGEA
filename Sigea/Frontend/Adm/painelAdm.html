@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel de Administrador</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./painelAdm.css">
+</head>
+<body>
+    <header>
+        <h1>Painel de Administrador</h1>
+        <p>Bem-vindo, diretor</p>
+    </header>
+
+    <nav>
+        <a href="#turmas">Gerenciar turmas</a>
+        <a href="#professores">Gerenciar professores</a>
+        <a href="#alunos">Gerenciar alunos</a>
+    </nav>
+
+    <main>
+
+        <section id="turmas" class="turmas">
+            <h2>Turmas</h2>
+
+            <button class="add" onclick="popUpTurma(event)">Adicionar nova turma <i class="fa-solid fa-plus"></i></button>
+
+            <form id="popUpAddTurma">
+                <input type="text" id="nomeTurma" placeholder="Nome da turma (ex: 1A-M)" required>
+                <button class="enviar" onclick="addTurma(event)" >Salvar</button>
+                <button class="cancelar" type="button" onclick="cancelAdd()">Cancelar</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="display:none;">ID</th>
+                        <th>Nome da Turma</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="professores" class="professores">
+            <h2>Professores</h2>
+
+            <button class="add" onclick="popUpProf(event)">Adicionar novo professor <i class="fa-solid fa-plus"></i></button>
+
+            <form id="popUpAddProf">
+                <input type="text" class="baseDadosProf" id="nomeProf" placeholder="Nome do professor" required>
+                <input type="text" class="baseDadosProf" id="cpfProf" placeholder="CPF do professor" required>
+                <input type="password" class="baseDadosProf" id="senhaProf" placeholder="Senha do professor" required>
+
+                <div id="ListaTurmasProf">
+                    <h3>Selecione as Turmas</h3>
+                </div>
+
+                <div id="ListaMateriasProf">
+                    <h3>Selecione as Matérias</h3>
+                </div>
+
+                <button class="enviar" onclick="addProf(event)">Salvar</button>
+                <button class="cancelar" type="button" onclick="cancelAdd()">Cancelar</button>
+            </form>
+
+            <form id="popUpEditarProf" style="display:none">
+                <input type="hidden" id="idProfEditar">
+                <input type="text" class="baseDadosProf" id="nomeProfEditar" placeholder="Nome do professor" required>
+                <input type="text" class="baseDadosProf" id="cpfProfEditar" placeholder="CPF do professor" required>
+                <input type="password" class="baseDadosProf" id="senhaProfEditar" placeholder="Nova senha (deixe em branco para manter)">
+
+                <div id="ListaTurmasProfEditar">
+                    <h3>Selecione as Turmas</h3>
+                </div>
+
+                <div id="ListaMateriasProfEditar">
+                    <h3>Selecione as Matérias</h3>
+                </div>
+
+                <button class="enviar" onclick="editarProf(event)">Salvar Alterações</button>
+                <button class="cancelar" type="button" onclick="cancelAdd()">Cancelar</button>
+            </form>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th style="display:none;">ID</th>
+                        <th>Nome do Professor</th>
+                        <th>Detalhes</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+
+        <section id="alunos" class="alunos">
+            <h2>Alunos</h2>
+
+            <button class="add" onclick="popUpAluno(event)">Adicionar novo aluno <i class="fa-solid fa-plus"></i></button>
+
+            <form id="popUpAddAluno">
+                <input type="text" class="baseDadosAluno" id="nomeAluno" placeholder="Nome do aluno" required>
+                <input type="text" class="baseDadosAluno" id="cpfAluno" placeholder="CPF do aluno" required>
+                <input type="password" class="baseDadosAluno" id="senhaAluno" placeholder="Senha do aluno" required>
+
+                <div class="select-turma-section">
+                    <label for="selectTurmaAluno">Selecione a Turma</label>
+                    <select id="selectTurmaAluno" required>
+                        <option value="">Carregando...</option>
+                    </select>
+                </div>
+
+                <div id="ListaMateriasAluno">
+                    <h3>Selecione as Matérias</h3>
+                </div>
+
+                <button class="enviar" onclick="addAluno(event)">Salvar</button>
+                <button class="cancelar" type="button" onclick="cancelAdd()">Cancelar</button>
+            </form>
+
+             <form id="popUpEditarAluno" style="display:none;">
+                <input type="hidden" id="idAlunoEditar">
+                <input type="text" class="baseDadosAluno" id="nomeAlunoEditar" placeholder="Nome do aluno" required>
+                <input type="text" class="baseDadosAluno" id="cpfAlunoEditar" placeholder="CPF do aluno" required>
+                <input type="password" class="baseDadosAluno" id="senhaAlunoEditar" placeholder="Nova senha (deixe em branco para manter)">
+
+                <div class="select-turma-section">
+                    <label for="selectTurmaAlunoEditar">Selecione a Turma</label>
+                    <select id="selectTurmaAlunoEditar" required></select>
+                </div>
+
+                <div id="ListaMateriasAlunoEditar">
+                    <h3>Selecione as Matérias</h3>
+                </div>
+
+                <button class="enviar" onclick="salvarEdicaoAluno(event)">Salvar Alterações</button>
+                <button type="button" class="cancelar" onclick="cancelAdd()">Cancelar</button>
+            </form>
+
+            <table id="tabelaAlunos">
+                <thead>
+                    <tr>
+                        <th style="display:none;">ID</th>
+                        <th>Nome do Aluno</th>
+                        <th>CPF</th>
+                        <th>Turma</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <script src="./painelAdm.js"></script>
+</body>
+</html>

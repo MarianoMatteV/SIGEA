@@ -1,0 +1,201 @@
+/* Reset e fonte */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5; /* Cinza Neutro */
+  color: #333;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #1565C0; /* Azul Profundo */
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Menu de navegação */
+nav {
+  background-color: #90CAF9; /* Azul Claro */
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #1565C0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Conteúdo principal */
+main {
+  max-width: 1100px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+/* Seções */
+.turmas, .alunos {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.turmas h2, .alunos h2 {
+  margin-top: 0;
+  color: #1565C0;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+th {
+  background-color: #90CAF9;
+  color: #1565C0;
+  font-weight: bold;
+}
+
+/* Botões */
+.editar {
+  background-color: #1976D2; /* Azul Médio */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.editar:hover {
+  background-color: #0D47A1; /* Azul mais escuro */
+}
+
+/* Inputs de notas */
+input[type="number"] {
+  width: 70px;
+  padding: 0.3rem;
+  border: 1px solid #bbb;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+  background-color: #E3F2FD; /* Azul bem claro */
+}
+
+input[type="number"]:focus {
+  outline: none;
+  border-color: #1565C0;
+  background-color: #BBDEFB;
+}
+
+/* Select da chamada */
+select {
+  padding: 0.4rem;
+  border-radius: 5px;
+  border: 1px solid #bbb;
+  background-color: #E3F2FD;
+  font-weight: bold;
+}
+
+select:focus {
+  outline: none;
+  border-color: #1565C0;
+  background-color: #BBDEFB;
+}
+/* Botões */
+.editar {
+  background-color: #1976D2; /* Azul Médio */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.editar:hover {
+  background-color: #0D47A1; /* Azul mais escuro */
+}
+
+/* Botão Visualizar Alunos */
+.btn-visualizar {
+  background: linear-gradient(135deg, #1976D2, #1565C0);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn-visualizar:hover {
+  background: linear-gradient(135deg, #0D47A1, #0A3D91);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-visualizar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Botão Salvar */
+.btn-salvar {
+  background: linear-gradient(135deg, #4CAF50, #45a049);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.btn-salvar:hover {
+  background: linear-gradient(135deg, #45a049, #3d8b40);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.btn-salvar:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+}

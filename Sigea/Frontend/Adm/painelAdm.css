@@ -1,0 +1,370 @@
+body{
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5; /* Cinza Neutro */
+  color: #333;
+}
+
+header {
+  background-color: #1565C0; /* Azul Profundo */
+  color: #FFFFFF;
+  padding: 1rem 2rem;
+  text-align: center;
+}
+
+nav {
+  background-color: #90CAF9; /* Azul Claro */
+  padding: 0.8rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+nav a {
+  color: #1565C0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+main {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.turmas, .professores, .alunos {
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.turmas h2, .professores h2, .alunos h2 {
+  margin-top: 0;
+  color: #1565C0;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 0.8rem;
+  text-align: center;
+}
+
+th {
+  background-color: #90CAF9;
+  color: #1565C0;
+}
+
+/* Cores de Suporte */
+.sucesso {
+  color: #43A047; /* Verde Sucesso */
+  font-weight: bold;
+}
+.aviso {
+  color: #FDD835; /* Amarelo Aviso */
+  font-weight: bold;
+}
+.erro {
+  color: #E53935; /* Vermelho Erro */
+  font-weight: bold;
+}
+
+
+.editar, .add, .detalhes, .detalhesProf, .detalhesAluno{
+  background-color: #1976D2; /* Azul Médio */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 2px;
+}
+.excluirTurma, .excluirProf, .excluirAluno {
+  background-color: #E53935; /* Vermelho Médio */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  margin: 0 2px;
+}
+.associarTurma{
+  background-color: #388E3C; /* Verde Médio */
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+#popUpAddTurma, #popUpAddProf, #popUpAddAluno, #popUpEditarProf, #popUpEditarAluno {
+  margin-top: 1rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.8rem;
+  background: #E3F2FD; /* Azul bem claro */
+  border: 2px solid #90CAF9;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(21,101,192,0.08);
+  padding: 1.5rem;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+#nomeTurma, .baseDadosProf, #nomeMateria, .baseDadosAluno {
+  margin-bottom: 0.7rem;
+  padding: 0.5rem;
+  border: 1px solid #90CAF9;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+/* Seções de turmas e matérias no formulário de professor */
+#ListaTurmasProf, #ListaMateriasProf, #ListaTurmasProfEditar, #ListaMateriasProfEditar {
+  background-color: #FFFFFF;
+  border: 1px solid #BBDEFB;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+#ListaTurmasProf h3, #ListaMateriasProf h3, #ListaTurmasProfEditar h3, #ListaMateriasProfEditar h3 {
+  color: #1565C0;
+  margin: 0 0 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #90CAF9;
+  padding-bottom: 0.5rem;
+}
+
+/* Estilização dos checkboxes */
+.checkbox-group {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  padding: 0.3rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+  background-color: #F3E5F5;
+}
+
+.checkbox-item input[type="checkbox"] {
+  margin-right: 0.5rem;
+  transform: scale(1.1);
+  accent-color: #1976D2;
+}
+
+.checkbox-item label {
+  color: #333;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkbox-item label:hover {
+  color: #1565C0;
+}
+
+/* Campo de nova matéria */
+.nova-materia-section {
+  background-color: #E8F5E8;
+  border: 1px solid #C8E6C9;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.nova-materia-section h4 {
+  color: #2E7D32;
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.enviar{
+  background-color: #1976D2;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+.cancelar{
+  background-color: #E53935;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.popup-prof-detalhes, .popup-aluno-detalhes {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #E3F2FD; /* Azul bem claro, igual aos popups */
+    padding: 1.5rem 2rem;
+    border: 2px solid #90CAF9;
+    z-index: 1000;
+    box-shadow: 0 4px 24px rgba(21,101,192,0.12);
+    border-radius: 14px;
+    width: 500px; /* Largura fixa */
+    max-width: 90vw; /* Responsividade para telas menores */
+    max-height: 85vh; /* Altura máxima */
+    overflow-y: auto; /* Barra de rolagem vertical se necessário */
+    color: #1565C0;
+    font-size: 1rem;
+    text-align: left;
+}
+
+.popup-prof-detalhes h2, .popup-aluno-detalhes h2 {
+    margin-top: 0;
+    color: #1565C0;
+    font-size: 1.4rem;
+    font-weight: 700;
+    border-bottom: 2px solid #90CAF9;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.popup-prof-detalhes p, .popup-aluno-detalhes p {
+    margin: 0.7rem 0;
+    color: #333;
+    font-size: 1rem;
+}
+
+.popup-prof-detalhes strong, .popup-aluno-detalhes strong {
+    color: #1976D2;
+}
+
+.popup-prof-detalhes button, .popup-aluno-detalhes button {
+    margin-top: 1.2rem;
+    background-color: #1976D2;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background 0.2s;
+    float: right; /* Alinha o botão à direita */
+}
+
+.popup-prof-detalhes button:hover, .popup-aluno-detalhes button:hover {
+    background-color: #1565C0;
+}
+
+/* Lista de matérias no popup de detalhes do aluno */
+.popup-aluno-detalhes ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    margin-top: 0.5rem;
+    color: #333;
+}
+
+.popup-aluno-detalhes li {
+    margin-bottom: 0.5rem;
+}
+
+
+/* Campos de input do aluno */
+.baseDadosAluno {
+  margin-bottom: 0.7rem;
+  padding: 0.5rem;
+  border: 1px solid #90CAF9;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.baseDadosAluno:focus {
+  outline: none;
+  border-color: #1976D2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Seção de seleção de turma */
+.select-turma-section {
+  background-color: #FFFFFF;
+  border: 1px solid #BBDEFB;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+.select-turma-section label {
+  color: #1565C0;
+  font-weight: 600;
+  font-size: 1.1rem;
+  display: block;
+  margin-bottom: 0.5rem;
+  border-bottom: 2px solid #90CAF9;
+  padding-bottom: 0.3rem;
+}
+
+#selectTurmaAluno, #selectTurmaAlunoEditar {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #90CAF9;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+#selectTurmaAluno:focus, #selectTurmaAlunoEditar:focus {
+  outline: none;
+  border-color: #1976D2;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.2);
+}
+
+/* Seção de matérias para alunos */
+#ListaMateriasAluno, #ListaMateriasAlunoEditar {
+  background-color: #FFFFFF;
+  border: 1px solid #BBDEFB;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 0.5rem 0;
+}
+
+#ListaMateriasAluno h3, #ListaMateriasAlunoEditar h3 {
+  color: #1565C0;
+  margin: 0 0 0.8rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-bottom: 2px solid #90CAF9;
+  padding-bottom: 0.5rem;
+}

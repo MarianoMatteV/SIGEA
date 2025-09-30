@@ -1,0 +1,85 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F5F5; /* Cinza Neutro */
+    color: #333;
+  }
+
+  header {
+    background-color: #1565C0; /* Azul Profundo */
+    color: #FFFFFF;
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  nav {
+    background-color: #90CAF9; /* Azul Claro */
+    padding: 0.8rem;
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  nav a {
+    color: #1565C0;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 1rem;
+  }
+
+  .card {
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .card h2 {
+    margin-top: 0;
+    color: #1565C0;
+  }
+
+  /* Tabelas */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+  }
+
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+
+  th, td {
+    padding: 0.8rem;
+    text-align: center;
+  }
+
+  th {
+    background-color: #90CAF9;
+    color: #1565C0;
+  }
+
+  /* Cores de Suporte */
+  .sucesso {
+    color: #43A047; /* Verde Sucesso */
+    font-weight: bold;
+  }
+  .aviso {
+    color: #FDD835; /* Amarelo Aviso */
+    font-weight: bold;
+  }
+  .erro {
+    color: #E53935; /* Vermelho Erro */
+    font-weight: bold;
+  }
