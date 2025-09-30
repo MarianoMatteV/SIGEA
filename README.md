@@ -33,7 +33,7 @@ Este projeto foi feito para a atividade de técnico, onde foi solicitado criar u
 $ git clone <https://github.com/MarianoMatteV/SIGEA.git>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd SIGEA
+$ cd sigea
 
 # Vá para a pasta do backend
 $ cd backend
