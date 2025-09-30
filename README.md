@@ -30,10 +30,10 @@ Este projeto foi feito para a atividade de técnico, onde foi solicitado criar u
 
 ```bash
 # Clone este repositório
-$ git clone <>
+$ git clone <https://github.com/MarianoMatteV/SIGEA.git>
 
 # Acesse a pasta do projeto no terminal/cmd
-$ cd 
+$ cd SIGEA
 
 # Vá para a pasta do backend
 $ cd backend
